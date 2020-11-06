@@ -22,3 +22,15 @@ az deployment group create \
   --template-file $templateFile \
   --verbose
 ```
+
+## 03. Add parameters
+
+```bash
+templateFile="03-add-parameters/azuredeploy.json"
+az deployment group create \
+  --name addstorage \
+  --resource-group PilotoDevOps \
+  --template-file $templateFile \
+  --parameters storageName=storagedemordma \
+  --verbose
+```

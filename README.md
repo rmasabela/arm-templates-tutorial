@@ -8,5 +8,17 @@ templateFile="01-first-template/azuredeploy.json"
 az deployment group create \
   --name blanktemplate \
   --resource-group PilotoDevOps \
-  --template-file $templateFile
+  --template-file $templateFile \
+  --verbose
+```
+
+## 02. Add resource
+
+```bash
+templateFile="02-add-resource/azuredeploy.json"
+az deployment group create \
+  --name addstorage \
+  --resource-group PilotoDevOps \
+  --template-file $templateFile \
+  --verbose
 ```

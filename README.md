@@ -28,9 +28,29 @@ az deployment group create \
 ```bash
 templateFile="03-add-parameters/azuredeploy.json"
 az deployment group create \
-  --name addstorage \
+  --name addstoragewithparams \
   --resource-group PilotoDevOps \
   --template-file $templateFile \
   --parameters storageName=storagedemordma \
+  --verbose
+```
+
+```bash
+templateFile="03-add-parameters/azuredeploy.json"
+az deployment group create \
+  --name usenondefaultsku \
+  --resource-group PilotoDevOps \
+  --template-file $templateFile \
+  --parameters storageName=storagedemordma storageSKU=Standard_GRS \
+  --verbose
+```
+
+```bash
+templateFile="03-add-parameters/azuredeploy.json"
+az deployment group create \
+  --name useinvalidsku \
+  --resource-group PilotoDevOps \
+  --template-file $templateFile \
+  --parameters storageName=storagedemordma storageSKU=Basic \
   --verbose
 ```
